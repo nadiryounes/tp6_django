@@ -5,12 +5,15 @@
 {% for post in posts %}
 <div>
     <h2>
-        <!-- <a href="{% url 'post_detail' post.pk %}">{{post.title}}</a> -->
         <a href="{{ post.get_absolute_url }}">{{post.title}}</a>
 
     </h2>
     <p>Author: {{post.author}}</p>
     <p>{{post.body}}</p>
+    <p><a href="{% url 'post_edit' post.pk %}">+ Edit Blog Post</a></p>
+    <p>
+    <p><a href="{% url 'post_delete' post.pk %}">+ Delete Blog Post</a></p>
+    </p>
 </div>
 {% endfor %}
 
